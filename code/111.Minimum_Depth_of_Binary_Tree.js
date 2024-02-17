@@ -47,14 +47,14 @@ var minDepth = function(root) {
   if (root === null) return 0;                // Base case for recursion, return from DFS
   if (root.left === null) {                   // Dead end to the left,
       console.log("left child is null at " + root.val+". Checking depth to the right")
-      return 1 + minDepth(root.right)         // Add 1 and search to the right
+      return 1 + minDepth(root.right)         // Add 1 plus result of search to the right
   }
   if (root.right === null) {                  // Dead end to the right
       console.log("right child is null at " + root.val+". Checking depth to the left")
-      return 1 + minDepth(root.left)          // Add 1 and search to the left
+      return 1 + minDepth(root.left)          // Add 1 plus result of search to the left
   }
   console.log("neither child is null at "+root.val)
-  return 1 + Math.min(minDepth(root.left),minDepth(root.right)) // Add 1 and search both sides, return the minimum
+  return 1 + Math.min(minDepth(root.left),minDepth(root.right)) // Add 1 plus the minimum returned from both sides
 };
 
 /* log out:
